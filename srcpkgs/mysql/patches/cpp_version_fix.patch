@@ -1,0 +1,11 @@
+--- include/my_global.h	2016-07-12 13:55:26.000000000 +0200
++++ include/my_global.h	2016-08-18 15:07:42.194260977 +0200
+@@ -403,7 +403,7 @@
+ #include <ieeefp.h>
+ #endif
+ 
+-#if (__cplusplus >= 201103L)
++#if (__cplusplus >= 199711L)
+   /* For C++11 use the new std functions rather than C99 macros. */
+   #include <cmath>
+   #define my_isfinite(X) std::isfinite(X)
