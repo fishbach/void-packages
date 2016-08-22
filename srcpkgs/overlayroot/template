@@ -1,0 +1,16 @@
+pkgname=overlayroot
+version=1
+revision=1
+noarch=yes
+build_style=meta
+short_desc="Mount overlay root with tmpfs on top"
+maintainer="Christian Fischbach <cf@cflib.de>"
+license="Public Domain"
+homepage="http://www.voidlinux.eu"
+
+do_install() {
+	vmkdir usr/lib/dracut/modules.d/95overlayroot
+	vinstall ${FILESDIR}/module-setup.sh 755 usr/lib/dracut/modules.d/95overlayroot
+	vinstall ${FILESDIR}/mount-overlayroot.sh 755 usr/lib/dracut/modules.d/95overlayroot
+	vinstall ${FILESDIR}/overlayroot_enter_rw 700 usr/bin
+}

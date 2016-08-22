@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if ! [ -d /.ro ] ; then
+  echo "overlay root not active"
+  exit 1
+fi
+
+mount -oremount,rw /.ro
+chroot /.ro
+mount -oremount,ro /.ro
+
+echo
+echo "!!! Modifying read only root fs makes system instable !!!"
+echo "!!! Reboot soon !!!"
+echo
